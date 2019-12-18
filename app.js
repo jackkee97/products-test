@@ -47,11 +47,20 @@ const products = [
 
 function totalSumOfProducts (products) {
   let sum = 0; 
-
   // Your Solution goes here. 
+  products.forEach(object => {
+    let valid = true;
+    Object.keys(object).forEach(key => {
+      if (!object[key]){
+        valid = false;
+      }
+      if (valid && Number.isInteger(object[key])){
+        sum += object[key];
+      }
+    });
+  });
 
-
-  return sum; 
+  return sum/100; 
 }
 
 
